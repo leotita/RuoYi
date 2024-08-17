@@ -1,16 +1,17 @@
 package com.ruoyi.web.controller.system;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 import com.ruoyi.common.core.controller.BaseController;
 import com.ruoyi.common.core.domain.AjaxResult;
 import com.ruoyi.common.core.domain.entity.SysUser;
 import com.ruoyi.common.utils.StringUtils;
 import com.ruoyi.framework.shiro.service.SysRegisterService;
 import com.ruoyi.system.service.ISysConfigService;
+import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
  * 注册验证
@@ -18,13 +19,12 @@ import com.ruoyi.system.service.ISysConfigService;
  * @author ruoyi
  */
 @Controller
+@RequiredArgsConstructor(onConstructor_ = @Autowired)
 public class SysRegisterController extends BaseController
 {
-    @Autowired
-    private SysRegisterService registerService;
+    private final SysRegisterService registerService;
 
-    @Autowired
-    private ISysConfigService configService;
+    private final ISysConfigService configService;
 
     @GetMapping("/register")
     public String register()

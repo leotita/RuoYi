@@ -193,6 +193,13 @@
                 <version>${ruoyi.version}</version>
             </dependency>
 
+            <!--lombok工具类-->
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>1.18.30</version>
+            </dependency>
+
         </dependencies>
     </dependencyManagement>
 
@@ -208,6 +215,11 @@
 
 
     <dependencies>
+        <!--导入通用依赖-->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
 
     </dependencies>
 

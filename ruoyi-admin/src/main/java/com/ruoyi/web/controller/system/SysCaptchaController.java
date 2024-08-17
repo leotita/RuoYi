@@ -1,20 +1,22 @@
 package com.ruoyi.web.controller.system;
 
-import java.awt.image.BufferedImage;
-import java.io.IOException;
-import javax.annotation.Resource;
+import com.google.code.kaptcha.Constants;
+import com.google.code.kaptcha.Producer;
+import com.ruoyi.common.core.controller.BaseController;
+import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
+
 import javax.imageio.ImageIO;
 import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.servlet.ModelAndView;
-import com.google.code.kaptcha.Constants;
-import com.google.code.kaptcha.Producer;
-import com.ruoyi.common.core.controller.BaseController;
+import java.awt.image.BufferedImage;
+import java.io.IOException;
 
 /**
  * 图片验证码（支持算术形式）
@@ -23,13 +25,12 @@ import com.ruoyi.common.core.controller.BaseController;
  */
 @Controller
 @RequestMapping("/captcha")
+@RequiredArgsConstructor(onConstructor_ = @Autowired)
 public class SysCaptchaController extends BaseController
 {
-    @Resource(name = "captchaProducer")
-    private Producer captchaProducer;
+    private final Producer captchaProducer;
 
-    @Resource(name = "captchaProducerMath")
-    private Producer captchaProducerMath;
+    private final Producer captchaProducerMath;
 
     /**
      * 验证码生成

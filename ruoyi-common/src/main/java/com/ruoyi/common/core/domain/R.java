@@ -1,5 +1,7 @@
 package com.ruoyi.common.core.domain;
 
+import lombok.Data;
+
 import java.io.Serializable;
 
 /**
@@ -7,6 +9,7 @@ import java.io.Serializable;
  *
  * @author ruoyi
  */
+@Data
 public class R<T> implements Serializable
 {
     private static final long serialVersionUID = 1L;
@@ -72,35 +75,6 @@ public class R<T> implements Serializable
         return apiResult;
     }
 
-    public int getCode()
-    {
-        return code;
-    }
-
-    public void setCode(int code)
-    {
-        this.code = code;
-    }
-
-    public String getMsg()
-    {
-        return msg;
-    }
-
-    public void setMsg(String msg)
-    {
-        this.msg = msg;
-    }
-
-    public T getData()
-    {
-        return data;
-    }
-
-    public void setData(T data)
-    {
-        this.data = data;
-    }
 
     public static <T> Boolean isError(R<T> ret)
     {

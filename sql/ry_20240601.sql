@@ -1,3 +1,7 @@
+
+drop database if exists ry;
+create database ry DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+use ry;
 -- ----------------------------
 -- 1、部门表
 -- ----------------------------

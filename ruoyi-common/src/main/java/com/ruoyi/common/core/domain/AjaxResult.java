@@ -1,14 +1,19 @@
 package com.ruoyi.common.core.domain;
 
+import com.ruoyi.common.utils.StringUtils;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+
 import java.util.HashMap;
 import java.util.Objects;
-import com.ruoyi.common.utils.StringUtils;
 
 /**
  * 操作消息提醒
  *
  * @author ruoyi
  */
+@EqualsAndHashCode(callSuper = true)
+@Data
 public class AjaxResult extends HashMap<String, Object>
 {
     private static final long serialVersionUID = 1L;
